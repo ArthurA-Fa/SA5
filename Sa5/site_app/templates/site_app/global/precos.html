@@ -1,0 +1,29 @@
+{% extends "site_app/global/base.html" %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+    <h3>Meus Preços</h3>
+
+    <div class="container mt-3">
+        <div class="row">
+
+            {% for row in dados %}
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="{{row.img}}" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">{{row.titulo}}</h4>
+                            <p class="card-text">{{row.descricao}}</p>
+                            <a href="/precos/{{row.id}}" class="btn btn-primary">See Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+{% endblock content %}
