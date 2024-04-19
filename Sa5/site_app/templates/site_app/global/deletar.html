@@ -23,7 +23,7 @@
                         <td width="27%">{{row.email}}</td>
                         <td width="27%">{{row.ani}}</td>
                         <td width="27%">{{row.pais}}</td>
-                        <td width="15%"><a class="btn btn-primary" href="{% url "atualizar" row.id %}">atualizar</a></td>
+                        <td width="25%"><a class="btn btn-danger" href="{% url "deletar_id" row.id %}">Deletar</a>
                     </tr>
                     {% endfor %}
                 </tbody>

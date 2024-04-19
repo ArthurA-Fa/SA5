@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container-fluid mt-3">
-    {% include "site_app\partials\search.html" with url_search = 'atualizar' %}
+    {% include "site_app\partials\search.html" with url_search = 'atualizar'%}
         <div>
             {% if pessoas %}
             <table class="table table-hover">
@@ -16,14 +16,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                    {% for row in atualizar %}
+                    {% for row in pessoas %}
                     <tr>
                         <td width="27%">{{row.id}}</td>
                         <td width="27%">{{row.nome}}</td>
                         <td width="27%">{{row.email}}</td>
                         <td width="27%">{{row.ani}}</td>
                         <td width="27%">{{row.pais}}</td>
-                        <td width="15%"><a class="btn btn-primary" href="{% url "atualizar" row.id %}">atualizar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -36,3 +35,4 @@
         </div>
 </div>
 {% endblock content %}
+

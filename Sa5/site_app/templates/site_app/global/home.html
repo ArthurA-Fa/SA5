@@ -2,17 +2,20 @@
 
 {% block content %}
 <div class="container-fluid mt-3">
-    <form action="{% url 'home' %}" method="post">
+    <form action="{% url 'criar' %}" method="post">
         {% csrf_token %}
         <input type="text" name="nome" placeholder="Nome completo" />
         <input type="text" name="email" placeholder="example@example.com" />
+        <input type="number" name="ani" placeholder="Sua idade" />
+        <input type="text" name="pais" placeholder="Pais de origem" />
+        
 
         <button type="submit">Salvar</button>
     </form>
         <div>
             {% if nome %}
                 <h1> Dados obtidos: </h1>
-                <p>{{nome}} {{email}}</p> 
+                <p>{{nome}} {{email}} {{ani}} {{pais}}</p> 
             {% endif %}
     
             {% if dados %}
@@ -22,6 +25,8 @@
                     <th>Id</th>
                     <th>Nome</th>
                     <th>Email</th>
+                    <th>Aniversário</th>
+                    <th>Pais</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -31,7 +36,9 @@
                         <td width="27%">{{row.id}}</td>
                         <td width="27%">{{row.nome}}</td>
                         <td width="27%">{{row.email}}</td>
-                        <td width="25%"><a class="btn btn-danger" href="{% url "deletar" row.id %}">Deletar</a> <a class="btn btn-primary" href="{% url "atualizar" row.id %}">atualizar</a></td>
+                        <td width="27%">{{row.ani}}</td>
+                        <td width="27%">{{row.pais}}</td>
+                        <td width="25%"><a class="btn btn-danger" href="{% url "deletar_id" row.id %}">Deletar</a> <a class="btn btn-primary" href="{% url "atualizar_id" row.id %}">atualizar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>

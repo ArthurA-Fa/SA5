@@ -7,13 +7,16 @@
         <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/produtos">Produtos</a>
+                    <a class="nav-link" href="{% url "pesquisar" %}">Pesquisar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/precos">Preços</a>
+                    <a class="nav-link" href="{% url "atualizar" %}">Atualizar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contatos</a>
+                    <a class="nav-link" href="{% url "deletar" %}">Deletar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "criar" %}">Criar</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">

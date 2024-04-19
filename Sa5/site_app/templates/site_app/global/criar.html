@@ -1,0 +1,22 @@
+{% extends "site_app/global/base.html" %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+    <form action="{% url 'home' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="nome" placeholder="Nome completo" />
+        <input type="text" name="email" placeholder="example@example.com" />
+        <input type="primary" name="ani" placeholder="Sua idade" />
+        <input type="text" name="pais" placeholder="Pais de origem" />
+        
+
+        <button type="submit">Salvar</button>
+    </form>
+
+    {% if nome %}
+        <h1> Dados obtidos: </h1>
+        <p>{{nome}} {{email}} {{ani}} {{pais}}</p> 
+    {% endif %}
+
+</div>
+{% endblock content %}
